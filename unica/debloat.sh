@@ -197,6 +197,29 @@ SYSTEM_DEBLOAT+="
 system/app/MinusOnePage
 "
 
+# Bixby
+SYSTEM_DEBLOAT+="
+system/priv-app/Bixby
+system/priv-app/BixbyInterpreter
+system/app/BixbyWakeup
+system/app/VisionIntelligence3.7
+system/etc/permissions/privapp-permissions-com.samsung.android.bixby.agent.xml
+system/etc/permissions/privapp-permissions-com.samsung.android.bixby.wakeup.xml
+system/etc/permissions/privapp-permissions-com.samsung.android.visionintelligence_v3.7.xml
+system/etc/permissions/signature-permissions-com.samsung.android.bixby.agent.xml
+system/etc/permissions/signature-permissions-com.samsung.android.visionintelligence_v3.7.xml
+system/etc/sysconfig/bixbyagent.xml
+system/etc/sysconfig/preinstalled-packages-com.samsung.android.bixby.agent.xml
+system/etc/sysconfig/preinstalled-packages-com.samsung.android.bixby.wakeup.xml
+"
+
+# Samsung Internet
+SYSTEM_DEBLOAT+="
+system/preload/SBrowser
+system/etc/permissions/signature-permissions-com.sec.android.app.sbrowser.xml
+system/etc/permissions/signature-permissions-com.sec.android.app.sbrowser.beta.xml
+"
+
 # Samsung Language Core
 SYSTEM_DEBLOAT+="
 system/etc/permissions/signature-permissions-com.samsung.android.offline.languagemodel.xml
