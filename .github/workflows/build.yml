@@ -49,8 +49,13 @@ jobs:
           DEBIAN_FRONTEND=noninteractive sudo apt install -yq \
             7zip attr ccache clang ffmpeg \
             libbrotli-dev libgtest-dev libprotobuf-dev libunwind-dev libpcre2-dev \
-            libzstd-dev linux-modules-extra-$(uname -r) lld protobuf-compiler webp
-          sudo modprobe erofs f2fs
+            libzstd-dev lld protobuf-compiler webp
+          # The runner kernel can be ahead of the apt repo, so linux-modules-extra
+          # for the exact version may be missing; try it but don't fail the build.
+          DEBIAN_FRONTEND=noninteractive sudo apt install -yq "linux-modules-extra-$(uname -r)" \
+            || DEBIAN_FRONTEND=noninteractive sudo apt install -yq linux-modules-extra-azure \
+            || echo "linux-modules-extra not available; relying on built-in/loadable erofs & f2fs"
+          sudo modprobe erofs f2fs || true
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
