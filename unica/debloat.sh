@@ -192,16 +192,6 @@ system/priv-app/AREmojiEditor
 system/priv-app/AvatarEmojiSticker
 "
 
-# Samsung Calendar
-SYSTEM_DEBLOAT+="
-system/app/SamsungCalendar
-"
-
-# Samsung Clock
-SYSTEM_DEBLOAT+="
-system/app/ClockPackage
-"
-
 # Samsung Free
 SYSTEM_DEBLOAT+="
 system/app/MinusOnePage
