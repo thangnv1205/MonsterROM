@@ -109,6 +109,11 @@ PRODUCT_DEBLOAT+="
 app/Duo
 "
 
+# Google Messages (Samsung Messages kept as the SMS app)
+PRODUCT_DEBLOAT+="
+priv-app/Messages
+"
+
 # Google Maps
 PRODUCT_DEBLOAT+="
 app/Maps
